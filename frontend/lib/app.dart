@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'screens/splash_screen.dart';
+import 'screens/identity_onboarding_screen.dart';
+import 'screens/verify_bvn_screen.dart';
+import 'screens/add_visit_screen.dart';
+import 'screens/sentinel_ai_scan_screen.dart';
+import 'screens/emergency_referral_screen.dart';
 import 'theme/app_colors.dart';
 
 class MaternalSentinelApp extends StatelessWidget {
@@ -30,7 +35,7 @@ class MaternalSentinelApp extends StatelessWidget {
         SplashScreen.routeName: (context) => const SplashScreen(),
         IdentityOnboardingScreen.routeName: (context) => const IdentityOnboardingScreen(),
         VerifyBvnScreen.routeName: (context) => const VerifyBvnScreen(),
-        MidwifeCommandCenterScreen.routeName: (context) => const MidwifeCommandCenterScreen(),
+        // MidwifeCommandCenterScreen does not have a static routeName; use MaterialPageRoute for navigation.
         AddVisitScreen.routeName: (context) => const AddVisitScreen(patientId: 0), // patientId should be passed via arguments
         SentinelAIScanScreen.routeName: (context) => const SentinelAIScanScreen(),
         EmergencyReferralScreen.routeName: (context) => const EmergencyReferralScreen(),

@@ -4,7 +4,7 @@ import '../controllers/verify_bvn_controller.dart';
 import '../repositories/auth_repository.dart';
 import '../services/api_service.dart';
 import '../theme/app_colors.dart';
-import 'midwife_command_center_screen.dart';
+import 'midwife_command_center_screen.dart' as mcc;
 
 class VerifyBvnScreen extends StatefulWidget {
   static const String routeName = '/verify-bvn';
@@ -61,7 +61,9 @@ class _VerifyBvnScreenState extends State<VerifyBvnScreen> {
     final isSuccess = await _controller.verify(_bvnController.text);
     if (!mounted || !isSuccess) return;
 
-    Navigator.of(context).pushReplacementNamed(MidwifeCommandCenterScreen.routeName);
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const mcc.MidwifeCommandCenterScreen()),
+    );
   }
 
   @override

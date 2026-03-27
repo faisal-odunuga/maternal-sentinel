@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
-import 'midwife_command_center_screen.dart';
+import 'midwife_command_center_screen.dart' as mcc;
 import 'components/brand_header.dart';
 import 'components/registration_card.dart';
 import 'components/app_footer.dart';
@@ -59,7 +59,9 @@ class _IdentityOnboardingScreenState extends State<IdentityOnboardingScreen> {
     if (!mounted) return;
     setState(() => _isLoading = false);
 
-    Navigator.of(context).pushReplacementNamed(MidwifeCommandCenterScreen.routeName);
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => const mcc.MidwifeCommandCenterScreen()),
+    );
   }
 
   @override
